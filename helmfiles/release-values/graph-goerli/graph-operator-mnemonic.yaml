@@ -7,21 +7,21 @@
 ## Instead, you can generate a SealedSecret, which is an encrypted payload that can only be read by the sealed-secrets controller inside the cluster, this is safe to commit into the repo
 
 resources:
-  ### RECOMMENDED, safe to commit
-  # sealed-secret:
-  #   apiVersion: bitnami.com/v1alpha1
-  #   kind: SealedSecret
-  #   metadata:
-  #     name: graph-operator-mnemonic
-  #     namespace: graph-goerli
-  #   spec:
-  #     template:
-  #       metadata:
-  #         name: graph-operator-mnemonic
-  #         namespace: graph-goerli
-  #       type: Opaque
-  #     encryptedData:
-  #       mnemonic: xxx # Generate a SealedSecret encryptedData key with the "utils:seal-secrets" task, e.g.: task utils:seal-secrets -- -n graph-goerli -s graph-operator-mnemonic -k mnemonic -v "your mnemonic words"
+  ## RECOMMENDED, safe to commit
+  sealed-secret:
+    apiVersion: bitnami.com/v1alpha1
+    kind: SealedSecret
+    metadata:
+      name: graph-operator-mnemonic
+      namespace: graph-goerli
+    spec:
+      template:
+        metadata:
+          name: graph-operator-mnemonic
+          namespace: graph-goerli
+        type: Opaque
+      encryptedData:
+        mnemonic: 'AgAMIiD5uIEhFEEEZeeQexjrwSAn5E7iSx6h2WbHYzyypXClQQZ8tXTh7PMdpT1qbos9lr0RvPY8yoQsDCYt6qGkTc53e/n6gFikQsCV1IUsSr9jxUOw4HcFtBlszc8+ENU8JZ189JBy0EYXc1gqMjPIzg4mQqvMzONGBhqo8vVwqBf7kK2VBouInQbnWg53hGJUPDCygv+0RIoif/uAr/8oupkd3QQTtv5M/khaCJfs0mmZWDZ3FkYbB60+U//jRJcQdWJ6noAT055oMrXG7ZrLzfNY6Uap24GjKMasxmYQLE2rwe2IPiw4MYRMG7zxR6dsuHCjrixrvpt2Y3Cxlot6GTAirRda2e7I2TWGs3CfQYk5nAFL+vm3D+AHpQ3rqAF18zR/0TWV6dwigGlF6DOYJqPCDBMvdtNUvJpz5hZ3HQf2jfGMfE45EUDlzw1ee5kPTDJ0yYKA4SnoSNEUmw5FA1aP1wGyEG8eZ7i/xgTNRtwhdeS+NDbUarkAOKjf2E15R9+jvCRFFdQ6CXctgVO9iQ6MHKdLbnKFBBbr9PsFEjwu/9fsK8Y+qtmn1ohi5XMjkn/Jm6pAtId9bgIziJCP3P2K2bCHvztU2bWc8t9wkDxNPoV394UO0kqfPCklfhK2/HxZYoy5hXYLB8W0cVKDX1G1/nXAOs6leYY/+6Hr8cxD965u6LLbo1cco1H5vk3mTFjlMNWwHCJQ81yAhAj9UAH4IaGuMDPU2njLnIZnae4Nj0CbYIdWJ70De2QDiXfTfmRHH+i6PLr8JVmLfp8UfLJq0jfMBScoegeRGqQ41YOm9L3r0N9n9lPLDnGo' # Generate a SealedSecret encryptedData key with the "utils:seal-secrets" task, e.g.: task utils:seal-secrets -- -n graph-goerli -s graph-operator-mnemonic -k mnemonic -v "your mnemonic words"
 
   ### OR... SIMPLE, but not safe to commit
   # regular-secret:

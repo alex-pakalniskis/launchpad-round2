@@ -2,9 +2,9 @@
 
 indexerDefaults:
   config:
-    ethereum: "http://proxyd-eth-goerli-proxyd.eth-goerli:8545"
+    ethereum: "https://eth-goerli.g.alchemy.com/v2/4aQTHR1xzFtOdG9V0Fk8SLTsC2ZXoVfN"
     ethereum-network: "goerli"
-    indexer-address: "XXX_CHANGEME_XXX"
+    indexer-address: "0x38FDAa37d65BD452EB6c9EDc8413571fED96a896"
     graph-node-query-endpoint: "http://graph-node-query:8000"
     graph-node-status-endpoint: "http://graph-node-index:8030/graphql"
     postgres-host: "pg-indexer-metadata"
@@ -17,12 +17,12 @@ indexerDefaults:
 indexerAgent:
   config:
     graph-node-admin-endpoint: "http://graph-node-index:8020"
-    public-indexer-url: "XXX_CHANGEME_XXX"
+    public-indexer-url: "XXX_CHANGEME_XXX" #do we need a domain?
     index-node-ids: "graph-node-index-0" # TODO this should be removed as a requirement, in the mean time it should be a comma delimited list of index node ids
     collect-receipts-endpoint: "https://gateway.testnet.thegraph.com/collect-receipts"
-    network-subgraph-deployment: "XXX_CHANGEME_XXX" # find at https://github.com/graphprotocol/indexer/blob/main/docs/networks.md
-    dai-contract: "XXX_CHANGEME_XXX" # find at https://github.com/graphprotocol/indexer/blob/main/docs/networks.md
-    epoch-subgraph-endpoint: "XXX_CHANGEME_XXX" # find at https://github.com/graphprotocol/indexer/blob/main/docs/networks.md
+    network-subgraph-deployment: "QmeTrzKtD7fuNScLZFE4QtcmFqNfcePRumkHNdZhoZSA3G" # find at https://github.com/graphprotocol/indexer/blob/main/docs/networks.md
+    dai-contract: "0x9e7e607afd22906f7da6f1ec8f432d6f244278be" # find at https://github.com/graphprotocol/indexer/blob/main/docs/networks.md
+    epoch-subgraph-endpoint: "https://api.thegraph.com/subgraphs/name/graphprotocol/goerli-epoch-block-oracle" # find at https://github.com/graphprotocol/indexer/blob/main/docs/networks.md
 
   env: {}
 
@@ -41,7 +41,7 @@ indexerAgent:
 indexerService:
   replicaCount: 1 # scale me
   config:
-    client-signer-address: "XXX_CHANGEME_XXX" # find at https://github.com/graphprotocol/indexer/blob/main/docs/networks.md
+    client-signer-address: "0xe1EC4339019eC9628438F8755f847e3023e4ff9c" # find at https://github.com/graphprotocol/indexer/blob/main/docs/networks.md
 
   env: {}
 
